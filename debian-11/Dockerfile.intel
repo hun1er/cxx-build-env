@@ -1,0 +1,44 @@
+# Base image
+FROM hun1er/build-env-clang
+
+# Environment variables
+ENV INTEL_ARCH="ia32"
+ENV INTEL_COMPILER="intel-dpcpp-cpp-compiler-2024.2.1.79.sh"
+COPY "../assets/${INTEL_COMPILER}" "/tmp/"
+
+# Container setup
+RUN set -eu; \
+    # Switch to temp directory
+    cd /tmp; \
+    \
+    # Add repositories
+    wget -O- https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB | \
+    gpg --dearmor | tee /usr/share/keyrings/oneapi-archive-keyring.gpg > /dev/null; \
+    echo "deb [signed-by=/usr/share/keyrings/oneapi-archive-keyring.gpg] https://apt.repos.intel.com/oneapi all main" | \
+    tee /etc/apt/sources.list.d/oneAPI.list; \
+    \
+    # Update system
+    apt update -y; \
+    apt upgrade -y; \
+    apt dist-upgrade -y; \
+    \
+    # Install Intel compiler
+    chmod +x "${INTEL_COMPILER}"; \
+    bash "${INTEL_COMPILER}" \
+    --remove-extracted-files yes \
+    -a --cli --silent --action install --eula accept --intel-sw-improvement-program-consent decline; \
+    rm "${INTEL_COMPILER}"; \
+    \
+    # Update dynamic linker cache
+    ldconfig; \
+    \
+    # System cleanup
+    apt autoremove -y --purge; \
+    apt autoclean -y; \
+    apt clean -y; \
+    rm -rf /var/lib/apt/lists/*; \
+    rm -rf /var/cache/*; \
+    rm -rf /var/log/*; \
+    rm -rf /tmp/*
+
+ENTRYPOINT ["/bin/bash", "-c", "source /opt/intel/oneapi/setvars.sh ${INTEL_ARCH} && exec /bin/bash"]
