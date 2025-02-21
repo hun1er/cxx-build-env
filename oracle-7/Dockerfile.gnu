@@ -85,7 +85,11 @@ RUN set -eu; \
     file \
     flex \
     gettext \
-    git \
+    git236 \
+    git236-core \
+    git236-cvs \
+    git236-subtree \
+    git236-svn \
     glibc \
     glibc-common \
     glibc-devel \
@@ -260,7 +264,11 @@ RUN set -eu; \
     curl \
     diffutils \
     file \
-    git \
+    git236 \
+    git236-core \
+    git236-cvs \
+    git236-subtree \
+    git236-svn \
     glibc \
     glibc-common \
     glibc-devel \
@@ -329,6 +337,7 @@ RUN set -eu; \
     \
     # Configure packages
     ldconfig; \
+    git config --global --add safe.directory '*'; \
     \
     # System cleanup
     ./oracle/system_cleanup.sh
