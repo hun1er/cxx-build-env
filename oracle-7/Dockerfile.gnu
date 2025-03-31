@@ -331,7 +331,6 @@ RUN set -eu; \
     ./install_ambuild.sh; \
     ./install_cmake.sh; \
     ./install_ninja.sh; \
-    ./install_elfkickers.sh; \
     ./install_nasm.sh; \
     ./install_cppcheck.sh; \
     \
