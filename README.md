@@ -17,6 +17,7 @@ A Docker-based development environment for compiling 32-bit and 64-bit C/C++ app
 |----------------|-------|----------|-------|--------|--------|--------|--------|--------------|
 | **Debian 11**      | 2.31  |   2.44   | 4.4.1 | 3.31.6 | 1.12.2 | 10.2.1 | 19.1.7 |   2024.2.1   |
 | **Oracle Linux 7** | 2.17  |   2.44   | 4.4.1 | 3.31.6 | 1.12.2 | 14.2.0 |   -    |      -       |
+| **Ubuntu 24.04**   | 2.39  |   2.44   | 4.4.1 | 3.31.6 | 1.12.2 | 14.2.0 | 19.1.7 |   2024.2.1   |
 
 ## Building Images
 
@@ -78,7 +79,12 @@ Ready-to-use images are available on Docker Hub:
   - 🐉 [Clang/LLVM](https://hub.docker.com/repository/docker/hun1er/debian-11-cxx-build-env-clang)
   - 🔷 [Intel oneAPI](https://hub.docker.com/repository/docker/hun1er/debian-11-cxx-build-env-intel)
 
-- **Oracle Linux 7 Image**:
+- **Ubuntu 24.04 Images**:
+  - 🐂 [GNU](https://hub.docker.com/repository/docker/hun1er/ubuntu-24.04-cxx-build-env-gnu)
+  - 🐉 [Clang/LLVM](https://hub.docker.com/repository/docker/hun1er/ubuntu-24.04-cxx-build-env-clang)
+  - 🔷 [Intel oneAPI](https://hub.docker.com/repository/docker/hun1er/ubuntu-24.04-cxx-build-env-intel)
+
+- **Oracle Linux 7 Images**:
   - 🐂 [GNU](https://hub.docker.com/repository/docker/hun1er/oracle-7-cxx-build-env-gnu)
 
 ## License

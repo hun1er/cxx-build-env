@@ -14,6 +14,7 @@ readonly NASM_VERSION="2.16.03"
 declare -A AVAILABLE_COMPILERS=(
     ["debian-11"]="gnu clang intel"
     ["oracle-7"]="gnu"
+    ["ubuntu-24.04"]="gnu clang intel"
 )
 
 # Global options with default values
