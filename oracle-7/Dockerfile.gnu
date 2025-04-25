@@ -196,7 +196,7 @@ ARG CMAKE_VERSION \
     APP_DIR="/app"
 
 # Environment variables
-ENV RUNTIME_DEVTOOLSET_VERSION="14"
+ENV RUNTIME_DEVTOOLSET_VERSION="15"
 
 # Copy devtoolset from builder image to final image
 COPY --from=builder "$DEVTOOLSET_DIR" "/opt/rh/devtoolset-$RUNTIME_DEVTOOLSET_VERSION"

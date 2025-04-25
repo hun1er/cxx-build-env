@@ -16,7 +16,7 @@ A Docker-based development environment for compiling 32-bit and 64-bit C/C++ app
 |  Distribution  | glibc | Binutils | Make  | CMake  | Ninja  |  GCC   | Clang  | Intel oneAPI |
 |----------------|-------|----------|-------|--------|--------|--------|--------|--------------|
 | **Debian 11**      | 2.31  |   2.44   | 4.4.1 | 3.31.7 | 1.12.2 | 10.2.1 | 19.1.7 |   2024.2.1   |
-| **Oracle Linux 7** | 2.17  |   2.44   | 4.4.1 | 3.31.7 | 1.12.2 | 14.2.0 |   -    |      -       |
+| **Oracle Linux 7** | 2.17  |   2.44   | 4.4.1 | 3.31.7 | 1.12.2 | 15.1.0 |   -    |      -       |
 | **Ubuntu 24.04**   | 2.39  |   2.44   | 4.4.1 | 3.31.7 | 1.12.2 | 14.2.0 | 19.1.7 |   2024.2.1   |
 
 ## Building Images
