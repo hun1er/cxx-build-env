@@ -4,7 +4,7 @@ set -euo pipefail
 # Define variables
 readonly BINUTILS_VERSION="2.44"
 readonly CLANG_VERSION="19"
-readonly CMAKE_VERSION="3.31.6"
+readonly CMAKE_VERSION="3.31.7"
 readonly CPPCHECK_VERSION="2.17.1"
 readonly GCC_VERSION="14.2.0"
 readonly MAKE_VERSION="4.4.1"
