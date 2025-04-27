@@ -34,12 +34,15 @@ cd "$GCC_BUILD_DIR"
 ../configure \
     --prefix="$GCC_PREFIX" \
     --program-prefix="$GCC_PROGRAM_PREFIX" \
-    --enable-languages=c,c++ \
-    --enable-shared \
-    --enable-static \
-    --enable-multilib \
+    --disable-bootstrap \
+    --disable-checking \
     --disable-nls \
     --disable-werror \
+    --enable-languages=c,c++ \
+    --enable-multilib \
+    --enable-shared \
+    --enable-static \
+    --enable-threads=posix \
     --with-multilib-list=m32,m64
 
 # Build and install
