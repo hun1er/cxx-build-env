@@ -3,7 +3,9 @@ FROM hun1er/ubuntu-24.04-cxx-build-env-gnu
 
 # Build-time variables
 ARG CLANG_VERSION \
-    LLVM_SOURCES_LIST="/etc/apt/sources.list.d/llvm.list"
+    LLVM_SOURCES_LIST="/etc/apt/sources.list.d/llvm.list" \
+    DEBIAN_EXTRA_REPO_LIST="/etc/apt/sources.list.d/debian-extra.list" \
+    DEBIAN_EXTRA_REPO_PREF="/etc/apt/preferences.d/99-debian-extra.pref"
 
 # Copy scripts to container
 COPY "../scripts" "/tmp"
@@ -21,6 +23,12 @@ RUN set -eu; \
     # Add repositories
     echo "deb [arch=amd64] http://apt.llvm.org/noble/ llvm-toolchain-noble-${CLANG_VERSION} main" > "${LLVM_SOURCES_LIST}"; \
     wget -qO- https://apt.llvm.org/llvm-snapshot.gpg.key | tee /etc/apt/trusted.gpg.d/apt.llvm.org.asc; \
+    \
+    # Add Debian repositories with lower priority
+    echo "deb http://apt.llvm.org/bookworm/ llvm-toolchain-bookworm-${CLANG_VERSION} main" > "${DEBIAN_EXTRA_REPO_LIST}"; \
+    echo "Package: *" > "${DEBIAN_EXTRA_REPO_PREF}"; \
+    echo "Pin: release n=bookworm" >> "${DEBIAN_EXTRA_REPO_PREF}"; \
+    echo "Pin-Priority: 100" >> "${DEBIAN_EXTRA_REPO_PREF}"; \
     \
     # Update system
     apt-get update -y; \

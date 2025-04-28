@@ -3,7 +3,7 @@ set -euo pipefail
 
 # Define variables
 readonly BINUTILS_VERSION="2.44"
-readonly CLANG_VERSION="19"
+readonly CLANG_VERSION="20"
 readonly CMAKE_VERSION="3.31.7"
 readonly CPPCHECK_VERSION="2.17.1"
 readonly GCC_VERSION="15.1.0"

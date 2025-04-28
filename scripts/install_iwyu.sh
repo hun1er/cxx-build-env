@@ -4,7 +4,7 @@ set -euo pipefail
 # Define variables
 IWYU_URL="https://github.com/include-what-you-use/include-what-you-use.git"
 IWYU_SRC_DIR="include-what-you-use"
-CLANG_VERSION="${CLANG_VERSION:-19}"
+CLANG_VERSION="${CLANG_VERSION:-20}"
 IWYU_PREFIX="${IWYU_PREFIX:-/usr/lib/llvm-$CLANG_VERSION}"
 INITIAL_DIR="$(pwd)"
 
