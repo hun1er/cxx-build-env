@@ -168,7 +168,7 @@ echo 'APT::Sandbox::User "root";' > /etc/apt/apt.conf.d/10sandbox
 # Install libc++ for i386 architecture
 TEMP_DIR="$(mktemp -d)"
 cd "$TEMP_DIR"
-apt-get download libc++1-"$CLANG_VERSION":i386
+apt-get download libc++1:i386
 dpkg -x ./*.deb .
 cp ./usr/lib/llvm-"$CLANG_VERSION"/lib/libc++.so.1.0 "$LLVM_LIB32_PATH"
 cd "$LLVM_LIB32_PATH"
@@ -195,7 +195,7 @@ rm -rf "$TEMP_DIR"
 # Install libc++abi for i386 architecture
 TEMP_DIR="$(mktemp -d)"
 cd "$TEMP_DIR"
-apt-get download libc++abi1-"$CLANG_VERSION":i386
+apt-get download libc++abi1:i386
 dpkg -x ./*.deb .
 cp ./usr/lib/llvm-"$CLANG_VERSION"/lib/libc++abi.so.1.0 "$LLVM_LIB32_PATH"
 cd "$LLVM_LIB32_PATH"
@@ -223,7 +223,7 @@ rm -rf "$TEMP_DIR"
 # Install libunwind for i386 architecture
 TEMP_DIR="$(mktemp -d)"
 cd "$TEMP_DIR"
-apt-get download libunwind-"$CLANG_VERSION":i386
+apt-get download libunwind:i386
 dpkg -x ./*.deb .
 cp ./usr/lib/llvm-"$CLANG_VERSION"/lib/libunwind.so.1.0 "$LLVM_LIB32_PATH"
 cd "$LLVM_LIB32_PATH"
