@@ -55,6 +55,9 @@ RUN set -eu; \
     # Enable devtoolset
     . "/opt/rh/devtoolset-$BUILDER_DEVTOOLSET_VERSION/enable"; \
     \
+    # Enable python 3.8
+    . /opt/rh/rh-python38/enable; \
+    \
     # Execute setup scripts
     ./install_make.sh; \
     ./install_binutils.sh; \
@@ -192,8 +195,8 @@ RUN set -eu; \
     pkgconfig \
     procps-ng-devel \
     procps-ng-devel.i686 \
-    python3 \
-    python3-pip \
+    rh-python38 \
+    rh-python38-python-pip \
     readline-devel \
     readline-devel.i686 \
     rsync \
@@ -209,6 +212,9 @@ RUN set -eu; \
     zlib-devel \
     zlib-devel.i686; \
     \
+    # Enable python 3.8
+    . /opt/rh/rh-python38/enable; \
+    \
     # Execute setup scripts
     ./install_ambuild.sh; \
     ./install_cmake.sh; \
@@ -220,11 +226,18 @@ RUN set -eu; \
     ldconfig; \
     git config --global --add safe.directory '*'; \
     \
+    # Install the entrypoint script
+    mv -f ./oracle/entrypoint.sh /usr/local/bin/; \
+    chmod +x /usr/local/bin/entrypoint.sh; \
+    \
     # System cleanup
     ./oracle/system_cleanup.sh
 
 # Set up the entry point
-ENTRYPOINT ["/bin/bash", "-c", "scl enable devtoolset-$RUNTIME_DEVTOOLSET_VERSION bash"]
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+
+# Set the default command
+CMD ["bash"]
 
 # Set the working directory
 WORKDIR "$APP_DIR"
