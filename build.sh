@@ -13,7 +13,7 @@ readonly NASM_VERSION="2.16.03"
 # Available compilers for each distribution
 declare -A AVAILABLE_COMPILERS=(
     ["oracle-7"]="gnu"
-    ["ubuntu-24.04"]="gnu clang intel"
+    ["ubuntu-24.04"]="gnu clang"
 )
 
 # Global options with default values
@@ -53,7 +53,7 @@ Options:
 
   -c, --compiler <name>
         Specify the compiler to include in the Docker image.
-        If a specific compiler is provided (e.g., 'gnu', 'clang', or 'intel'),
+        If a specific compiler is provided (e.g., 'gnu' or 'clang'),
         a Docker image will be built that contains that compiler.
         If 'all' is specified, Docker images will be built for each compiler
         available in the specified distribution, using default tags.

@@ -13,10 +13,10 @@ A Docker-based development environment for compiling 32-bit and 64-bit C/C++ app
 - **Legacy System Compatibility**:
   the **Oracle Linux 7** image comes with **glibc-2.17**, making it a suitable environment for compiling applications that need to run on older Linux distributions.
 
-|  Distribution  | glibc | Binutils | Make  | CMake  | Ninja  |  GCC   | Clang  | Intel oneAPI |
-|----------------|-------|----------|-------|--------|--------|--------|--------|--------------|
-| **Oracle Linux 7** | 2.17  |   2.44   | 4.4.1 | 3.31.7 | 1.12.2 | 15.1.0 |   -    |      -       |
-| **Ubuntu 24.04**   | 2.39  |   2.44   | 4.4.1 | 3.31.7 | 1.12.2 | 14.2.0 | 20.1.4 |   2024.2.1   |
+|  Distribution  | glibc | Binutils | Make  | CMake  | Ninja  |  GCC   | Clang  |
+|----------------|-------|----------|-------|--------|--------|--------|--------|
+| **Oracle Linux 7** | 2.17  |   2.44   | 4.4.1 | 3.31.7 | 1.12.2 | 15.1.0 |   -    |
+| **Ubuntu 24.04**   | 2.39  |   2.44   | 4.4.1 | 3.31.7 | 1.12.2 | 14.2.0 | 20.1.4 |
 
 ## Building Images
 
@@ -40,7 +40,6 @@ Specify the base Linux distribution for the Docker image (e.g., `oracle-7`, `ubu
 Specify the compiler to include in the Docker image:
   - `gnu`: GNU Compiler Collection (GCC)
   - `clang`: Clang/LLVM
-  - `intel`: Intel oneAPI DPC++/C++ Compiler
   - `all`: Build images for each compiler available in the specified distribution.
 
 - `-t, --tag <tag>`<br />
@@ -76,7 +75,6 @@ Ready-to-use images are available on Docker Hub:
 - **Ubuntu 24.04 Images**:
   - 🐂 [GNU](https://hub.docker.com/repository/docker/hun1er/ubuntu-24.04-cxx-build-env-gnu)
   - 🐉 [Clang/LLVM](https://hub.docker.com/repository/docker/hun1er/ubuntu-24.04-cxx-build-env-clang)
-  - 🔷 [Intel oneAPI](https://hub.docker.com/repository/docker/hun1er/ubuntu-24.04-cxx-build-env-intel)
 
 - **Oracle Linux 7 Images**:
   - 🐂 [GNU](https://hub.docker.com/repository/docker/hun1er/oracle-7-cxx-build-env-gnu)
@@ -91,4 +89,3 @@ This project uses third-party software and tools, each distributed under their r
 - **Oracle Linux**: distributed under the Oracle Linux End User License Agreement (EULA). See [Oracle Linux EULA](https://oss.oracle.com/ol7/EULA).
 - **GCC**: distributed under the GNU GPL. See [GCC Licensing](https://gcc.gnu.org/onlinedocs/gcc/Copying.html).
 - **Clang/LLVM**: distributed under the Apache 2.0 License with LLVM Exceptions. See [LLVM Licensing](https://llvm.org/docs/DeveloperPolicy.html).
-- **Intel oneAPI**: distributed under the Intel End User License Agreement (EULA). See [Intel Licensing](https://www.intel.com/content/www/us/en/developer/articles/license/end-user-license-agreement.html).
