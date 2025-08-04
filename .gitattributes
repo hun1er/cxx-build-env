@@ -227,6 +227,6 @@ CMakeUserPresets.json   eol=lf
 #   Miscellaneous   #
 #####################
 
-Dockerfile.gnu          linguist-language=Dockerfile
-Dockerfile.clang        linguist-language=Dockerfile
-Dockerfile.intel        linguist-language=Dockerfile
+Dockerfile.gnu          linguist-language=Dockerfile eol=lf
+Dockerfile.clang        linguist-language=Dockerfile eol=lf
+Dockerfile.intel        linguist-language=Dockerfile eol=lf
