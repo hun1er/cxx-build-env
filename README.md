@@ -15,7 +15,6 @@ A Docker-based development environment for compiling 32-bit and 64-bit C/C++ app
 
 |  Distribution  | glibc | Binutils | Make  | CMake  | Ninja  |  GCC   | Clang  | Intel oneAPI |
 |----------------|-------|----------|-------|--------|--------|--------|--------|--------------|
-| **Debian 11**      | 2.31  |   2.44   | 4.4.1 | 3.31.7 | 1.12.2 | 10.2.1 | 20.1.4 |   2024.2.1   |
 | **Oracle Linux 7** | 2.17  |   2.44   | 4.4.1 | 3.31.7 | 1.12.2 | 15.1.0 |   -    |      -       |
 | **Ubuntu 24.04**   | 2.39  |   2.44   | 4.4.1 | 3.31.7 | 1.12.2 | 14.2.0 | 20.1.4 |   2024.2.1   |
 
@@ -35,7 +34,7 @@ The build process is managed via the `build.sh` script:
 To build the Docker images, run the build.sh with the following options:
 
 - `-d, --distro <name>`<br />
-Specify the base Linux distribution for the Docker image (e.g., `oracle-7`, `debian-11`).
+Specify the base Linux distribution for the Docker image (e.g., `oracle-7`, `ubuntu-24.04`).
 
 - `-c, --compiler <name>`<br />
 Specify the compiler to include in the Docker image:
@@ -52,10 +51,10 @@ Display the help message.
 
 ### Examples
 
-Build a Docker image for Debian 11 with the GNU compiler:
+Build a Docker image for Ubuntu 24.04 LTS with the GNU compiler:
 
 ```console
-./build.sh --distro debian-11 --compiler gnu
+./build.sh --distro ubuntu-24.04 --compiler gnu
 ```
 
 Build a Docker image for Oracle 7 with the GNU compiler and a custom tag:
@@ -64,20 +63,15 @@ Build a Docker image for Oracle 7 with the GNU compiler and a custom tag:
 ./build.sh -d oracle-7 -c gnu -t my-custom-tag
 ```
 
-Build Docker images for all available compilers on Debian 11:
+Build Docker images for all available compilers on Ubuntu 24.04 LTS:
 
 ```console
-./build.sh -d debian-11
+./build.sh -d ubuntu-24.04
 ```
 
 ## Prebuilt Images
 
 Ready-to-use images are available on Docker Hub:
-
-- **Debian 11 Images**:
-  - 🐂 [GNU](https://hub.docker.com/repository/docker/hun1er/debian-11-cxx-build-env-gnu)
-  - 🐉 [Clang/LLVM](https://hub.docker.com/repository/docker/hun1er/debian-11-cxx-build-env-clang)
-  - 🔷 [Intel oneAPI](https://hub.docker.com/repository/docker/hun1er/debian-11-cxx-build-env-intel)
 
 - **Ubuntu 24.04 Images**:
   - 🐂 [GNU](https://hub.docker.com/repository/docker/hun1er/ubuntu-24.04-cxx-build-env-gnu)
@@ -94,7 +88,6 @@ This project is licensed under the [MIT License](LICENSE).
 ### Third-Party Licenses
 
 This project uses third-party software and tools, each distributed under their respective licenses:
-- **Debian**: distributed under the GNU GPL and other free software licenses. See [Debian Licensing](https://www.debian.org/legal/licenses).
 - **Oracle Linux**: distributed under the Oracle Linux End User License Agreement (EULA). See [Oracle Linux EULA](https://oss.oracle.com/ol7/EULA).
 - **GCC**: distributed under the GNU GPL. See [GCC Licensing](https://gcc.gnu.org/onlinedocs/gcc/Copying.html).
 - **Clang/LLVM**: distributed under the Apache 2.0 License with LLVM Exceptions. See [LLVM Licensing](https://llvm.org/docs/DeveloperPolicy.html).

@@ -12,7 +12,6 @@ readonly NASM_VERSION="2.16.03"
 
 # Available compilers for each distribution
 declare -A AVAILABLE_COMPILERS=(
-    ["debian-11"]="gnu clang intel"
     ["oracle-7"]="gnu"
     ["ubuntu-24.04"]="gnu clang intel"
 )
@@ -50,7 +49,7 @@ Usage: $0 [options]
 
 Options:
   -d, --distro <name>
-        Specify the Linux distribution on which the Docker image will be based (e.g., 'oracle-7', 'debian-11').
+        Specify the Linux distribution on which the Docker image will be based (e.g., 'oracle-7', 'ubuntu-24.04').
 
   -c, --compiler <name>
         Specify the compiler to include in the Docker image.
