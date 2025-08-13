@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Define variables
-MAKE_URL="https://ftp.gnu.org/gnu/make/make-$MAKE_VERSION.tar.gz"
+MAKE_URL="https://ftpmirror.gnu.org/gnu/make/make-$MAKE_VERSION.tar.gz"
 MAKE_PREFIX="${MAKE_PREFIX:-/usr}"
 MAKE_PROGRAM_PREFIX="${MAKE_PROGRAM_PREFIX:-}"
 MAKE_TAR_FILE="make.tar.gz"

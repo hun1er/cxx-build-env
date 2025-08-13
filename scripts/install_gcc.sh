@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Define variables
-GCC_URL="https://ftp.gnu.org/gnu/gcc/gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.gz"
+GCC_URL="https://ftpmirror.gnu.org/gnu/gcc/gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.gz"
 GCC_PREFIX="${GCC_PREFIX:-/usr}"
 GCC_PROGRAM_PREFIX="${GCC_PROGRAM_PREFIX:-}"
 GCC_TAR_FILE="gcc.tar.gz"

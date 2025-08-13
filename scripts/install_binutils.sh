@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Define variables
-BINUTILS_URL="https://ftp.gnu.org/gnu/binutils/binutils-with-gold-$BINUTILS_VERSION.tar.gz"
+BINUTILS_URL="https://ftpmirror.gnu.org/gnu/binutils/binutils-with-gold-$BINUTILS_VERSION.tar.gz"
 BINUTILS_PREFIX="${BINUTILS_PREFIX:-/usr}"
 BINUTILS_PROGRAM_PREFIX="${BINUTILS_PROGRAM_PREFIX:-}"
 BINUTILS_TAR_FILE="binutils-with-gold.tar.gz"
