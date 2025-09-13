@@ -68,20 +68,27 @@ RUN set -eu; \
     autoconf-archive \
     automake \
     bison \
+    gdb \
+    gdb-multiarch \
+    gdbserver \
     git \
     lcov \
     libtool \
+    ltrace \
     m4 \
     make \
     meson \
     pkg-config \
     scons \
+    strace \
     subversion \
     gcc-"$GNU_VERSION" gcc-"$GNU_VERSION"-multilib \
     g++"$GNU_VERSION" g++-"$GNU_VERSION"-multilib \
+    lib32stdc++6 \
     libc6-dev libc6-dev-i386 \
     libatomic1 libatomic1:i386 \
     libbz2-dev libbz2-dev:i386 \
+    libc6-dbg libc6-dbg:i386 \
     libffi-dev libffi-dev:i386 \
     libgdbm-dev libgdbm-dev:i386 \
     liblzma-dev liblzma-dev:i386 \
