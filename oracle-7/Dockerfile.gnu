@@ -118,13 +118,15 @@ RUN set -eu; \
     oraclelinux-developer-release-el7 \
     oraclelinux-release-el7 \
     https://archives.fedoraproject.org/pub/archive/epel/7/x86_64/Packages/e/epel-release-7-14.noarch.rpm \
-    https://repo.ius.io/ius-release-el7.rpm; \
+    https://vault.ius.io/el7/x86_64/packages/i/ius-release-2-1.el7.ius.noarch.rpm; \
+    \
+    # Fix IUS repository URLs
+    sed -i 's|repo.ius.io/7|vault.ius.io/el7|g' /etc/yum.repos.d/ius*.repo; \
     \
     # Enable repositories
     yum install -y \
     scl-utils \
     yum-utils; \
-    yum-config-manager --enable ius-testing; \
     yum-config-manager --enable ol7_addons; \
     yum-config-manager --enable ol7_optional_latest; \
     \
