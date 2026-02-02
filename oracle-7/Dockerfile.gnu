@@ -209,6 +209,7 @@ RUN set -eu; \
     tar \
     unzip \
     wget \
+    which \
     xz \
     zip \
     zlib-devel \
