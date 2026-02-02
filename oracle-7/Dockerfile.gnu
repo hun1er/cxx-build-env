@@ -191,6 +191,7 @@ RUN set -eu; \
     ncurses-devel.i686 \
     openssl-devel \
     openssl-devel.i686 \
+    patch \
     pcre-devel \
     pcre-devel.i686 \
     perl \
