@@ -189,6 +189,7 @@ RUN set -eu; \
     mpfr.i686 \
     ncurses-devel \
     ncurses-devel.i686 \
+    openssl \
     openssl-devel \
     openssl-devel.i686 \
     patch \
