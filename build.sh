@@ -5,7 +5,7 @@ set -euo pipefail
 readonly BINUTILS_VERSION="2.45.1"
 readonly CLANG_VERSION="20"
 readonly CMAKE_VERSION="3.31.11"
-readonly CPPCHECK_VERSION="2.18.0"
+readonly CPPCHECK_VERSION="2.19.0"
 readonly GCC_VERSION="15.2.0"
 readonly MAKE_VERSION="4.4.1"
 readonly NASM_VERSION="3.01"
