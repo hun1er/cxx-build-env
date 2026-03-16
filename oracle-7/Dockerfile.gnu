@@ -78,6 +78,7 @@ ARG CMAKE_VERSION \
     CPPCHECK_VERSION \
     DEVTOOLSET_DIR \
     NASM_VERSION \
+    GOLANG_VERSION \
     APP_DIR="/app"
 
 # Environment variables
@@ -98,6 +99,7 @@ RUN set -eu; \
     : "${CPPCHECK_VERSION:?}"; \
     : "${DEVTOOLSET_DIR:?}"; \
     : "${NASM_VERSION:?}"; \
+    : "${GOLANG_VERSION:?}"; \
     : "${RUNTIME_DEVTOOLSET_VERSION:?}"; \
     \
     # Create working directory and switch to temp directory
@@ -221,6 +223,7 @@ RUN set -eu; \
     . /opt/rh/rh-python38/enable; \
     \
     # Execute setup scripts
+    ./install_golang.sh; \
     ./install_ambuild.sh; \
     ./install_cmake.sh; \
     ./install_ninja.sh; \

@@ -9,6 +9,7 @@ ARG TZ="Europe/Kiev" \
     CPPCHECK_VERSION \
     MAKE_VERSION \
     NASM_VERSION \
+    GOLANG_VERSION \
     APP_DIR="/app"
 
 # Copy scripts to container
@@ -24,6 +25,7 @@ RUN set -eu; \
     : "${CPPCHECK_VERSION:?}"; \
     : "${MAKE_VERSION:?}"; \
     : "${NASM_VERSION:?}"; \
+    : "${GOLANG_VERSION:?}"; \
     \
     # Create working directory and switch to temp directory
     mkdir -p "$APP_DIR"; \
@@ -106,6 +108,7 @@ RUN set -eu; \
     update-alternatives --set gcc /usr/bin/gcc-"$GNU_VERSION"; \
     \
     # Execute setup scripts
+    ./install_golang.sh; \
     ./install_ambuild.sh; \
     ./install_cmake.sh; \
     ./install_make.sh; \
