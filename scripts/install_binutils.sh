@@ -2,11 +2,11 @@
 set -euo pipefail
 
 # Define variables
-BINUTILS_URL="https://ftpmirror.gnu.org/gnu/binutils/binutils-$BINUTILS_VERSION.tar.gz"
+BINUTILS_URL="https://ftpmirror.gnu.org/gnu/binutils/binutils-with-gold-$BINUTILS_VERSION.tar.gz"
 BINUTILS_PREFIX="${BINUTILS_PREFIX:-/usr}"
 BINUTILS_PROGRAM_PREFIX="${BINUTILS_PROGRAM_PREFIX:-}"
-BINUTILS_TAR_FILE="binutils.tar.gz"
-BINUTILS_SRC_DIR="binutils-$BINUTILS_VERSION"
+BINUTILS_TAR_FILE="binutils-with-gold.tar.gz"
+BINUTILS_SRC_DIR="binutils-with-gold-$BINUTILS_VERSION"
 INITIAL_DIR="$(pwd)"
 
 # Download and extract source tarball
@@ -30,6 +30,7 @@ cd "$BINUTILS_BUILD_DIR"
     --prefix="$BINUTILS_PREFIX" \
     --program-prefix="$BINUTILS_PROGRAM_PREFIX" \
     --enable-ld=yes \
+    --enable-gold=yes \
     --enable-multilib \
     --disable-nls \
     --disable-werror
