@@ -3,7 +3,7 @@ FROM ubuntu:noble
 
 # Build-time variables
 ARG TZ="Europe/Kiev" \
-    GNU_VERSION="14" \
+    GNU_VERSION="16" \
     BINUTILS_VERSION \
     CMAKE_VERSION \
     CPPCHECK_VERSION \
