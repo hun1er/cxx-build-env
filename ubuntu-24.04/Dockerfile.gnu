@@ -10,6 +10,7 @@ ARG TZ="Europe/Kiev" \
     MAKE_VERSION \
     NASM_VERSION \
     GOLANG_VERSION \
+    OPENSSL_VERSION \
     APP_DIR="/app"
 
 # Copy scripts to container
@@ -26,6 +27,7 @@ RUN set -eu; \
     : "${MAKE_VERSION:?}"; \
     : "${NASM_VERSION:?}"; \
     : "${GOLANG_VERSION:?}"; \
+    : "${OPENSSL_VERSION:?}"; \
     \
     # Create working directory and switch to temp directory
     mkdir -p "$APP_DIR"; \
@@ -116,6 +118,7 @@ RUN set -eu; \
     ./install_ninja.sh; \
     ./install_nasm.sh; \
     ./install_cppcheck.sh; \
+    ./install_openssl.sh; \
     \
     # Configure packages
     ldconfig; \

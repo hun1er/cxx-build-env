@@ -10,6 +10,7 @@ readonly GCC_VERSION="16.1.0"
 readonly MAKE_VERSION="4.4.1"
 readonly NASM_VERSION="3.02"
 readonly GOLANG_VERSION="1.26.5"
+readonly OPENSSL_VERSION="3.6.3"
 
 # Available compilers for each distribution
 declare -A AVAILABLE_COMPILERS=(
@@ -86,6 +87,7 @@ build_image() {
         --build-arg MAKE_VERSION="$MAKE_VERSION" \
         --build-arg NASM_VERSION="$NASM_VERSION" \
         --build-arg GOLANG_VERSION="$GOLANG_VERSION" \
+        --build-arg OPENSSL_VERSION="$OPENSSL_VERSION" \
         --file "$dockerfile" --tag "$tag" .
 }
 

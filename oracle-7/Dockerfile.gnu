@@ -79,6 +79,7 @@ ARG CMAKE_VERSION \
     DEVTOOLSET_DIR \
     NASM_VERSION \
     GOLANG_VERSION \
+    OPENSSL_VERSION \
     APP_DIR="/app"
 
 # Environment variables
@@ -100,6 +101,7 @@ RUN set -eu; \
     : "${DEVTOOLSET_DIR:?}"; \
     : "${NASM_VERSION:?}"; \
     : "${GOLANG_VERSION:?}"; \
+    : "${OPENSSL_VERSION:?}"; \
     : "${RUNTIME_DEVTOOLSET_VERSION:?}"; \
     \
     # Create working directory and switch to temp directory
@@ -235,6 +237,7 @@ RUN set -eu; \
     ./install_ninja.sh; \
     ./install_nasm.sh; \
     ./install_cppcheck.sh; \
+    ./install_openssl.sh; \
     \
     # Configure packages
     ldconfig; \
