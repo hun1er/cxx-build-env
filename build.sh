@@ -8,7 +8,7 @@ readonly CMAKE_VERSION="3.31.12"
 readonly CPPCHECK_VERSION="2.21.0"
 readonly GCC_VERSION="15.2.0"
 readonly MAKE_VERSION="4.4.1"
-readonly NASM_VERSION="3.01"
+readonly NASM_VERSION="3.02"
 readonly GOLANG_VERSION="1.26.5"
 
 # Available compilers for each distribution
