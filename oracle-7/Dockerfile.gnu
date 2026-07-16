@@ -170,6 +170,8 @@ RUN set -eu; \
     grep \
     gzip \
     jq \
+    libcom_err-devel \
+    libcom_err-devel.i686 \
     libffi-devel \
     libffi-devel.i686 \
     libgomp \
