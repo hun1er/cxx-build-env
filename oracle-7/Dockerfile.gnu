@@ -197,7 +197,7 @@ RUN set -eu; \
     patch \
     pcre-devel \
     pcre-devel.i686 \
-    perl \
+    perl-core \
     pkgconfig \
     procps-ng-devel \
     procps-ng-devel.i686 \
