@@ -172,6 +172,8 @@ RUN set -eu; \
     jq \
     libcom_err-devel \
     libcom_err-devel.i686 \
+    libcurl-devel \
+    libcurl-devel.i686 \
     libffi-devel \
     libffi-devel.i686 \
     libgomp \
