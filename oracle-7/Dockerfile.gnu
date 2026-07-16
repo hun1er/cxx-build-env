@@ -221,7 +221,9 @@ RUN set -eu; \
     xz \
     zip \
     zlib-devel \
-    zlib-devel.i686; \
+    zlib-devel.i686 \
+    zlib-static \
+    zlib-static.i686; \
     \
     # Enable python 3.8
     . /opt/rh/rh-python38/enable; \
